@@ -7,7 +7,10 @@
  */
 #include "systick.h"
 #include "rcc.h" // Para SYSCLK_FREQ_HZ
-#include "room_control.h"
+#include "room_control.h" // This header should declare led_set_brightness
+#include "room_control.c"
+// Declaración de la función get_uart_brightness si no está en un header incluido
+uint8_t get_uart_brightness(void);
 
 
 // Variable global para contar los ticks de milisegundos
@@ -36,6 +39,10 @@ void systick_init_1ms(void)
 uint32_t systick_get_tick(void)
 {
     return g_systick_ms_count;
+    
+
+
+
 }
 
 void systick_delay_ms(uint32_t ms)

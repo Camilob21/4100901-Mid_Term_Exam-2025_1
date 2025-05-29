@@ -13,7 +13,7 @@
 #define NVIC_ENABLE_IRQ(IRQn) (NVIC->ISER[IRQn / 32U] |= (1UL << (IRQn % 32U)))
 
 
-void nvic_exti_pc13_button_enable(void)
+void nvic_exti_pc13_button_enable(void)  
 {
     // 1. Habilitar el reloj para SYSCFG
     rcc_syscfg_clock_enable(); // SYSCFG es necesario para mapear EXTI a GPIO
